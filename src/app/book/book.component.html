@@ -1,0 +1,31 @@
+<h1>Rabii</h1>
+
+<div>
+<form>
+Enter Title: <input type="text" [(ngModel)] = "book.title" name="title"/>
+Enter Author: <input type="text" [(ngModel)] = "book.author" name="author"/>
+<button (click) = "addbook()">Add Book</button>
+</form>
+
+</div>
+<div> 
+<table border="1">
+<tr>
+    <th>id</th>
+    <th>Title</th>
+    <th>Author</th>
+    <th>Actions</th>
+</tr>
+<tr *ngFor ="let book of books">
+<td>{{book.id}}</td>
+<td>{{book.title}}</td>
+<td>{{book.author}}</td>
+<td>Edit | <button (click) = "deleteBook(book.id)">Delete Book</button></td>
+
+
+</tr>
+
+
+</table>
+
+</div>
